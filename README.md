@@ -4,6 +4,7 @@
 ## 開発環境
 - OS Microsoft Windows 10 Home
 - Python 3.12.0
+- Docker python:3.9-slim
 
 ## 設計
 - display.py
