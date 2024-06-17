@@ -8,7 +8,7 @@ import time
 #jsonファイルの読み込み、書き出し
 #pandasファイルに変換
 def init():
-    with open(r"data.json","r",encoding="UTF-8") as file:
+    with open(r"/app/URL-AUTOsystem-by-streamlit/data.json","r",encoding="UTF-8") as file:
         reader = json.load(file)
     sc_data=pd.DataFrame(reader)
     return sc_data
