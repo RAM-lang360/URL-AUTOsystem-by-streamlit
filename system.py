@@ -8,7 +8,7 @@ import time
 #jsonファイルの読み込み、書き出し
 #pandasファイルに変換
 def init():
-    with open(r"/app/URL-AUTOsystem-by-streamlit/data.json","r",encoding="UTF-8") as file:
+    with open(r"./data.json","r",encoding="UTF-8") as file:
         reader = json.load(file)
     sc_data=pd.DataFrame(reader)
     return sc_data
@@ -64,7 +64,7 @@ def pick_up_infromation(name):
 def time_fuction(week,sp_time,url):
     if week=="su":
         sc.every().sunday.at(sp_time).do(open_url,url)
-    elif week=="ma":
+    elif week=="mo":
         sc.every().monday.at(sp_time).do(open_url,url)
     elif week=="tu":
         sc.every().tuesday.at(sp_time).do(open_url,url)
@@ -82,6 +82,7 @@ def time_fuction(week,sp_time,url):
     while True:
         sc.run_pending()
         time.sleep(60)
+        print("実行中")
 #Zoom起動
 def zoom_start(name):
     week,sp_time,url=pick_up_infromation(name)

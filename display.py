@@ -10,6 +10,7 @@ def main():
     st.write("・曜日を編集できます。語の頭文字2文字を入力してください")
     st.text("      ex)日→su, 月→mo,火→tu,水→we,木→th,金→fr,土→sa")
     edited_df = st.data_editor(schedule_data, num_rows="dynamic")
+    print("Saveが押されました")
     save_button=st.button("Save")
     if save_button:
         save_schedule_data(edited_df)
